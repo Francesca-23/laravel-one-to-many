@@ -18,6 +18,11 @@ class Post extends Model
         return Str::slug($titolo, '-');
     }
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
     protected $fillable = [
         'titolo',
         'immagine',
@@ -25,5 +30,6 @@ class Post extends Model
         'descrizione',
         'tecnologie',
         'slug',
+        'type_id',
     ];
 }

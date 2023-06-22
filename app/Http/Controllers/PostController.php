@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin\Post;
+use App\Models\Admin\Type;
 use Illuminate\Http\Request;
 
 use App\Http\Controllers\Illuminate\Support\Str;
@@ -30,7 +31,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('admin.posts.create');
+        $types = Type::all();
+        return view('admin.posts.create', compact('types'));
     }
 
     /**

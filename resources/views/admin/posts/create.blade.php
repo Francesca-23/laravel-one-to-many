@@ -49,6 +49,18 @@
                 <div class="alert alert-danger">{{$message}}</div>
                 @enderror
 
+                {{-- Types --}}
+                <div>
+                    <label for="type" class="form-label">Tipologia</label>
+                    <select name="type_id" id="type" class="form-select">
+                        <option value="">--Scegli--</option>
+
+                        @foreach ($types as $elem)
+                            <option value="{{$elem->id}}">{{$elem->type_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <button type="submit" class=" d-block btn btn-primary">Invia</button>
             </form>
         </div>
