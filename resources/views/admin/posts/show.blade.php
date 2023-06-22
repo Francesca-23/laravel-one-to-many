@@ -12,6 +12,7 @@
 
                 <p>{{ $post['descrizione'] }}</p>
                 <a href="{{ $post['link'] }}">{{ $post['link'] }}</a>
+                <p>{{ $post->type->type_name }}</p>
             </div>
             <form action="{{route('admin.posts.destroy', $post)}}" method="POST">
                 @csrf

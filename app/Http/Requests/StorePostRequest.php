@@ -29,6 +29,7 @@ class StorePostRequest extends FormRequest
             'link' => ['required'],
             'descrizione' => ['required'],
             'tecnologie' => ['required'],
+            'type_id' => ['nullable']
         ];
     }
 }

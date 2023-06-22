@@ -50,6 +50,18 @@
                 <div class="alert alert-danger">{{$message}}</div>
                 @enderror
 
+                {{-- Types --}}
+                <div>
+                    <label for="type" class="form-label">Tipologia</label>
+                    <select name="type_id" id="type" class="form-select">
+                        <option value="">--Scegli--</option>
+
+                        @foreach ($types as $elem)
+                            <option value="{{$elem->id}}" {{old('type_id', $post->type_id) == $elem->id ? 'selected' : ''}}>{{$elem->type_name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <button type="submit" class=" d-block btn btn-primary">Modifica</button>
             </form>
         </div>
